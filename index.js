@@ -14,34 +14,34 @@ let errorCity = document.getElementById('errorCity');
 let loader = document.getElementById('loaderWrapper');
 let happy = "Happy";
 let localStorage = window.localStorage;
-// let deferredPrompt;
-// let promptBox = document.getElementById('prompt');
-// let closeButton = document.getElementById('closeButton');
-// const downloadButton = document.getElementById('download_button');
+let deferredPrompt;
+let promptBox = document.getElementById('prompt');
+let closeButton = document.getElementById('closeButton');
+const downloadButton = document.getElementById('download_button');
 
 
-// window.addEventListener('beforeinstallprompt', (e) => {
-//   deferredPrompt = e;
-//   promptBox.style.display = "flex";
-// });
+window.addEventListener('beforeinstallprompt', (e) => {
+  deferredPrompt = e;
+  promptBox.style.display = "flex";
+});
 
-// downloadButton.addEventListener('click', (e) => {
-//   promptBox.style.display = "none";
-//   deferredPrompt.prompt();
-//   deferredPrompt.userChoice.then(choiceResult => {
-//     if(choiceResult.outcome === 'accepted'){
-//       //console.log('User accepted the A2HS prompt');
-//     } else {
-//       //console.log('User dismissed the A2HS prompt');
-//     }
+downloadButton.addEventListener('click', (e) => {
+  promptBox.style.display = "none";
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(choiceResult => {
+    if(choiceResult.outcome === 'accepted'){
+      //console.log('User accepted the A2HS prompt');
+    } else {
+      //console.log('User dismissed the A2HS prompt');
+    }
 
-//     deferredPrompt = null;
-//   });
-// })
+    deferredPrompt = null;
+  });
+})
 
-// closeButton.addEventListener('click', () => {
-//   promptBox.style.display = 'none';
-// })
+closeButton.addEventListener('click', () => {
+  promptBox.style.display = 'none';
+})
 
 let date = new Date();
 const month = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
