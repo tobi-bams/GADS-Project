@@ -1,0 +1,82 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <title>Wheather App</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Weather PWA">
+        <meta name="description" content="A weather app">
+        <meta name="theme-color" content="#2F3BA2" />
+        <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+        <link rel="icon" type="image/png" sizes="128x128" href="./images/icons/icon-32x32.png">
+        <link rel="manifest" href="./manifest.json">
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js')
+                        .then((reg) => {
+                        // console.log('Service worker registered.', reg);
+                        });
+                });
+                }
+        </script>
+    </head>
+    <body>
+       <main>
+           <div id="loaderWrapper">
+               <div class="loader"></div>
+            </div>
+            <div id="prompt">
+                <div id="download_button">
+                   <div><img src="./images/icons/icon-128x128.png" alt="Image Banner"></div> 
+                    <p>Add Weather App to HomeScreen</p>
+                </div>
+                <p id="closeButton">X</p>
+            </div>
+           <form>
+               <input type="text" placeholder="Enter City Name" id="location_input" aria-label="Search Box">
+               
+               <div>
+                <small id="errMsg">City Name Cannot be Empty</small>
+               </div>
+               <div>
+                    <button id="btn" type="submit" aria-label="Search Button">Search Location</button>
+               </div>
+           </form>
+           <div id="main_content">
+                <div id="temperature_detail">
+                    <p id="temperature"></p>
+                    <p id="status"></p>
+                    <p id="date"></p>
+                    <p id="location"></p>
+                </div>
+                <div id="further_detail">
+                    <div class="card">
+                        <h4>Wind Speed</h4>
+                        <p id="wind_speed"></p>
+                    </div>
+                    <div class="card">
+                        <h4>Pressure</h4>
+                        <p id="pressure"></p>
+                    </div>
+                    <div class="card">
+                        <h4>Humidity</h4>
+                        <p id="humidity"></p>
+                    </div> 
+                    <div class="card">
+                        <h4>Wind Degree</h4>
+                        <p id="temp"></p>
+                    </div>
+                </div>
+           </div>
+           <div id="errorCity">
+                <p id="errorCityInfo">City not Found</p>
+                <small id="errorCitySmall">Please Enter a valid city name or check your spellings</small>
+           </div>
+       </main>
+       <script src="./index.js"></script>
+    </body>
+</html>
