@@ -39,9 +39,9 @@ let localStorage = window.localStorage;
 //   });
 // })
 
-closeButton.addEventListener('click', () => {
-  promptBox.style.display = 'none';
-})
+// closeButton.addEventListener('click', () => {
+//   promptBox.style.display = 'none';
+// })
 
 let date = new Date();
 const month = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
